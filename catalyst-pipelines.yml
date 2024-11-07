@@ -13,9 +13,9 @@ jobs:
     runner: Machine
     image: image
     steps:
-      - npm install -g vercel
-      - vercel --version
-      - vercel --token=DWkAIYRcGfsaZqkJmK2LtD3u --yes
+      - npm i netlify-cli
+      - netlify --version
+      - netlify deploy --auth nfp_iP3ca4jZdDgFwiQKGeetKuHto5LDFFgTb0c8
 stages:
   - name: test
     jobs:
