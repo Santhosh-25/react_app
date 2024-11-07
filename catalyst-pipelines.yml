@@ -17,7 +17,7 @@ jobs:
       - netlify --version
       - npm install
       - npm run build
-      - sudo netlify deploy --auth nfp_wwCvhjaRtWtrbnHgtenXadyHfmsWMpEBef3a
+      - netlify deploy --auth nfp_wwCvhjaRtWtrbnHgtenXadyHfmsWMpEBef3a --site 227f2a11-d754-4f35-82e0-62f167ed337c
 stages:
   - name: test
     jobs: 
