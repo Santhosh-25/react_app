@@ -16,7 +16,7 @@ jobs:
       - npm i -g netlify-cli
       - netlify --version
       - netlify link
-      - netlify deploy --auth nfp_iP3ca4jZdDgFwiQKGeetKuHto5LDFFgTb0c8
+      - netlify deploy --auth nfp_iP3ca4jZdDgFwiQKGeetKuHto5LDFFgTb0c8 --site 448d391a-4df3-43f8-ab7b-c93e5127851f
 stages:
   - name: test
     jobs:
