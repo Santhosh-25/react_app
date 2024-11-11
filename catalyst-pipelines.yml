@@ -38,7 +38,7 @@ jobs:
       upload:
         - type: zip
           regex:
-            - /catalyst/client/**
+            - /catalyst/**
           name: build
           location: stratus://netlify-builds/
     runner: Machine
