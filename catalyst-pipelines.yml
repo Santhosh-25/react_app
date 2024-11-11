@@ -15,8 +15,6 @@ jobs:
     steps:
       - npm i -g netlify-cli
       - netlify --version
-      - npm install
-      - npm run build
   Deployment_Approval:
     type: approval
     specification:
@@ -30,6 +28,7 @@ jobs:
     runner: Machine
     image: image
     steps:
+      - npm install  
       - npm run build
       - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
   test_build:
