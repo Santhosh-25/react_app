@@ -37,12 +37,12 @@ jobs:
     artifacts:
       upload:
         - type: file
-          name: build
-          location: stratus://netlify-builds/builds
-          file: build/
+          name: build.zip
+          location: stratus://netlify-builds/
+          file: ./
     runner: Machine
     image: image
-    cwd: /catalyst/build
+    cwd: ./
     steps:
       - echo `ls`
       - echo `pwd`
