@@ -42,7 +42,7 @@ jobs:
           file: build/
     runner: Machine
     image: image
-    cwd: /build
+    cwd: /catalyst/build
     steps:
       - echo `ls`
       - echo `pwd`
