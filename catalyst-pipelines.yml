@@ -36,10 +36,11 @@ jobs:
   test_build:
     artifacts:
       upload:
-        - type: file
-          name: build.zip
+        - type: zip
+          regex:
+            - /catalyst/client/**
+          name: build
           location: stratus://netlify-builds/
-          file: catalyst/
     runner: Machine
     image: image
     cwd: /catalyst/
