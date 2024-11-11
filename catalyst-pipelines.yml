@@ -28,6 +28,8 @@ jobs:
     runner: Machine
     image: image
     steps:
+      - npm i -g netlify-cli
+      - netlify --version
       - npm install  
       - npm run build
       - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
