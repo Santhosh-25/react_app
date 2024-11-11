@@ -44,8 +44,6 @@ jobs:
     image: image
     cwd: /build
     steps:
-      - npm install  
-      - npm run build  
       - echo `ls`
       - echo `pwd`
 stages:
