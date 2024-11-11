@@ -17,7 +17,6 @@ jobs:
       - netlify --version
       - npm install
       - npm run build
-      - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
   Deployment_Approval:
     type: approval
     specification:
@@ -27,10 +26,13 @@ jobs:
         Hi,
 
         Kindly approve the latest build.
+      steps:
+        - npm run build
+        - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
 stages:
-  - name: test
+  - name: build
     jobs:
       - Deploy_Client_Functions
-  - name: build
+  - name: deploy
     jobs:
       - Deployment_Approval
