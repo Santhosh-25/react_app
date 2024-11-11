@@ -39,10 +39,10 @@ jobs:
         - type: file
           name: build.zip
           location: stratus://netlify-builds/
-          file: ./
+          file: /
     runner: Machine
     image: image
-    cwd: ./
+    cwd: /
     steps:
       - echo `ls`
       - echo `pwd`
