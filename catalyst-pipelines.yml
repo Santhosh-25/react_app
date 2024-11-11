@@ -18,7 +18,19 @@ jobs:
       - npm install
       - npm run build
       - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
+  Deployment_Approval:
+    type: approval
+    specification:
+      reviewers:
+        - santhosh.mahendiran@zohocorp.com
+      message: |-
+        Hi,
+
+        Kindly approve the latest build.
 stages:
   - name: test
-    jobs: 
+    jobs:
       - Deploy_Client_Functions
+  - name: build
+    jobs:
+      - Deployment_Approval
