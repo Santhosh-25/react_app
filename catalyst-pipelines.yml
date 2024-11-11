@@ -26,9 +26,25 @@ jobs:
         Hi,
 
         Kindly approve the latest build.
-      steps:
-        - npm run build
-        - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
+  Deployment:
+    runner: Machine
+    image: image
+    steps:
+      - npm run build
+      - netlify deploy --auth << env.NETLIFY_TOKEN >> --site << env.SITE_ID >>
+  test_build:
+    artifacts:
+      upload:
+        - type: file
+          name: build
+          location: stratus://netlify-builds/builds
+          file: ./build
+    runner: Machine
+    image: image
+    cwd: /build
+    steps:
+      - ls
+      - echo pwd
 stages:
   - name: build
     jobs:
@@ -36,3 +52,9 @@ stages:
   - name: deploy
     jobs:
       - Deployment_Approval
+  - name: Deployment
+    jobs:
+      - Deployment
+  - name: test_build
+    jobs:
+      - test_build
