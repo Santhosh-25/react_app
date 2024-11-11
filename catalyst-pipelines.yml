@@ -39,13 +39,14 @@ jobs:
         - type: file
           name: build
           location: stratus://netlify-builds/builds
-          file: ./build
+          file: build/
     runner: Machine
     image: image
     cwd: /build
     steps:
-      - ls
-      - echo pwd
+      - npm run build  
+      - echo `ls`
+      - echo `pwd`
 stages:
   - name: build
     jobs:
