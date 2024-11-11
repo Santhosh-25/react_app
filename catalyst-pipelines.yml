@@ -46,6 +46,7 @@ jobs:
     steps:
       - echo `ls`
       - echo `pwd`
+      - echo `cd catalyst && ls`
 stages:
   - name: build
     jobs:
