@@ -13,6 +13,7 @@ jobs:
     runner: Machine
     image: image
     steps:
+      - npm install sharp
       - npm i -g netlify-cli
       - netlify --version
   Deployment_Approval:
